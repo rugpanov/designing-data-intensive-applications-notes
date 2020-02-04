@@ -15,7 +15,7 @@
 - [Encoding and evolution](/4-encoding-and-evolution#encoding-and-evolution)
   - [Formats for encoding data](/4-encoding-and-evolution#formats-for-encoding-data)
   - [Modes of dataflow](/4-encoding-and-evolution#modes-of-dataflow)
-- [Replication](/5-replication#replication)
+- [Replication](/5-replication#replication) ✔️
   - [Leaders and followers](/5-replication#leaders-and-followers)
   - [Problems with replication lag](/5-replication#problems-with-replication-lag)
   - [Multi-leader replication](/5-replication#multi-leader-replication)
