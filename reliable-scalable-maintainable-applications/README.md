@@ -1,8 +1,14 @@
-## Reliable, scalable, and maintainable applications
+# Reliable, scalable, and maintainable applications
+
+## Table of content
+
+- [Overview](#overview)
 - [Reliability](#reliability)
 - [Scalability](#scalability)
 - [Maintainability](#maintainability)
   
+## Overview 
+
 A data-intensive application is typically built from standard building blocks. They usually need to:
 * Store data (_databases_)
 * Speed up reads (_caches_)
@@ -14,7 +20,7 @@ A data-intensive application is typically built from standard building blocks. T
 * **Scalability**. Reasonable ways of dealing with growth.
 * **Maintainability**. Be able to work on it _productively_.
 
-### Reliability
+## Reliability
 
 Typical expectations:
 * Application performs the function the user expected
@@ -38,13 +44,13 @@ You should generally **prefer tolerating faults over preventing faults**.
     - Set up detailed and clear monitoring, such as performance metrics and error rates (_telemetry_).
     - Implement good management practices and training.
 
-### Scalability
+## Scalability
 
 This is how do we cope with increased load. We need to succinctly describe the current load on the system; only then we can discuss growth questions.
 
 ---
 
-#### Twitter example
+### Twitter example
 
 Twitter main operations
 - Post tweet: a user can publish a new message to their followers (4.6k req/sec, over 12k req/sec peak)
@@ -62,7 +68,7 @@ Twitter moved to an hybrid of both approaches. Tweets continue to be fanned out 
 
 ---
 
-#### Describing performance
+### Describing performance
 
 What happens when the load increases:
 * How is the performance affected?
@@ -70,7 +76,7 @@ What happens when the load increases:
 
 In a batch processing system such as Hadoop, we usually care about _throughput_, or the number of records we can process per second.
 
-> ##### Latency and response time
+> #### Latency and response time
 > The response time is what the client sees. Latency is the duration that a request is waiting to be handled.
 
 It's common to see the _average_ response time of a service reported. However, the mean is not very good metric if you want to know your "typical" response time, it does not tell you how many users actually experienced that delay.
@@ -90,11 +96,11 @@ Queueing delays often account for large part of the response times at high perce
 
 When generating load artificially, the client needs to keep sending requests independently of the response time.
 
-> ##### Percentiles in practice
+> #### Percentiles in practice
 > Calls in parallel, the end-user request still needs to wait for the slowest of the parallel calls to complete.
 > The chance of getting a slow call increases if an end-user request requires multiple backend calls.
 
-#### Approaches for coping with load
+### Approaches for coping with load
 
 * _Scaling up_ or _vertical scaling_: Moving to a more powerful machine
 * _Scaling out_ or _horizontal scaling_: Distributing the load across multiple smaller machines.
@@ -102,14 +108,14 @@ When generating load artificially, the client needs to keep sending requests ind
 
 Distributing stateless services across multiple machines is fairly straightforward. Taking stateful data systems from a single node to a distributed setup can introduce a lot of complexity. Until recently it was common wisdom to keep your database on a single node.
 
-### Maintainability
+## Maintainability
 
 The majority of the cost of software is in its ongoing maintenance. There are three design principles for software systems:
 * **Operability**. Make it easy for operation teams to keep the system running.
 * **Simplicity**. Easy for new engineers to understand the system by removing as much complexity as possible.
 * **Evolvability**. Make it easy for engineers to make changes to the system in the future.
 
-#### Operability: making life easy for operations
+### Operability: making life easy for operations
 
 A good operations team is responsible for
 * Monitoring and quickly restoring service if it goes into bad state
@@ -125,7 +131,7 @@ A good operations team is responsible for
 
 **Good operability means making routine tasks easy.**
 
-#### Simplicity: managing complexity
+### Simplicity: managing complexity
 
 When complexity makes maintenance hard, budget and schedules are often overrun. There is a greater risk of introducing bugs.
 
@@ -133,7 +139,7 @@ Making a system simpler means removing _accidental_ complexity, as non inherent 
 
 One of the best tools we have for removing accidental complexity is _abstraction_ that hides the implementation details behind clean and simple to understand APIs and facades.
 
-#### Evolvability: making change easy
+### Evolvability: making change easy
 
 _Agile_ working patterns provide a framework for adapting to change.
 
