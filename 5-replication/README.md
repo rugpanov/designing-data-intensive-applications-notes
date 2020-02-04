@@ -27,7 +27,7 @@ Every write to the database needs to be processed by every replica. The most com
 
 MySQL, Oracle Data Guard, SQL Server's AlwaysOn Availability Groups, MongoDB, RethinkDB, Espresso, Kafka and RabbitMQ are examples of these kind of databases.
 
-### Synchronous vs asynchronous
+### Synchronous vs asynchronous
 
 **The advantage of synchronous replication is that the follower is guaranteed to have an up-to-date copy of the data that is consistent with the leader. The disadvantage is that it the synchronous follower doesn't respond, the write cannot be processed.**
 
