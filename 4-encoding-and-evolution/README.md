@@ -61,7 +61,7 @@ Removing fields is just like adding a field with backward and forward concerns r
 
 What about changing the data type of a field? There is a risk that values will lose precision or get truncated.
 
-#### Avro
+#### [Avro](https://ru.bmstu.wiki/Apache_Avro)
 
 Apache Avro is another binary format that has two schema languages, one intended for human editing (Avro IDL), and one (based on JSON) that is more easily machine-readable.
 
